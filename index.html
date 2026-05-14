@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻頁單字卡 - 英文學習助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 翻頁單字卡</h1>
+            <nav>
+                <a href="index.html" class="nav-link active">學習</a>
+                <a href="admin.html" class="nav-link">管理</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="card-container">
+                <div class="card-wrapper">
+                    <div class="card" id="flashcard">
+                        <!-- 正面 -->
+                        <div class="card-face card-front">
+                            <div class="card-content">
+                                <p class="label">English Word</p>
+                                <h2 class="word-text" id="word">Word</h2>
+                                <p class="hint">Click to flip</p>
+                            </div>
+                        </div>
+                        <!-- 背面 -->
+                        <div class="card-face card-back">
+                            <div class="card-content">
+                                <p class="chinese-meaning" id="meaning">中文解釋</p>
+                                <p class="part-of-speech" id="pos">詞性</p>
+                                <p class="example-label">例句：</p>
+                                <p class="example" id="example">Example sentence</p>
+                                <p class="root-label">字根分析：</p>
+                                <p class="root-analysis" id="root">Root analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="prevBtn" class="btn btn-nav">← 上一個</button>
+                    <span class="counter" id="counter">1 / 10</span>
+                    <button id="nextBtn" class="btn btn-nav">下一個 →</button>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>共有 <span id="totalCount">10</span> 個單字</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

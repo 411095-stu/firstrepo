@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理頁面 - 翻頁單字卡</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 翻頁單字卡</h1>
+            <nav>
+                <a href="index.html" class="nav-link">學習</a>
+                <a href="admin.html" class="nav-link active">管理</a>
+            </nav>
+        </header>
+
+        <main class="main-content admin-content">
+            <div class="admin-section">
+                <h2>新增單字</h2>
+                <form id="addWordForm" class="form-group">
+                    <div class="form-row">
+                        <label for="newWord">英文單字 *</label>
+                        <input type="text" id="newWord" required placeholder="e.g., illuminate">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="newMeaning">中文解釋 *</label>
+                        <input type="text" id="newMeaning" required placeholder="e.g., 照亮、啟蒙">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="newPos">詞性 *</label>
+                        <select id="newPos" required>
+                            <option value="">選擇詞性</option>
+                            <option value="動詞 (v.)">動詞 (v.)</option>
+                            <option value="名詞 (n.)">名詞 (n.)</option>
+                            <option value="形容詞 (adj.)">形容詞 (adj.)</option>
+                            <option value="副詞 (adv.)">副詞 (adv.)</option>
+                            <option value="介詞 (prep.)">介詞 (prep.)</option>
+                            <option value="代詞 (pron.)">代詞 (pron.)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="newExample">例句 *</label>
+                        <textarea id="newExample" required placeholder="e.g., The candles illuminate the dark room."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="newRoot">字根分析 *</label>
+                        <textarea id="newRoot" required placeholder="e.g., illum- 表 light + -ate 動詞後綴"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">新增單字</button>
+                </form>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    ✅ 單字已成功新增！
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>已新增的單字</h2>
+                <div id="customWordsList" class="words-list">
+                    <p class="empty-message">尚無自訂單字</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>管理員專用頁面</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
